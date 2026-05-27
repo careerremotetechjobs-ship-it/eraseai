@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — EraseAI | Free AI Background Remover</title>
+<meta name="description" content="EraseAI Privacy Policy. Learn how we handle your data. All image processing runs locally in your browser — we never upload, store, or share your images.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eraseai.com/privacy-policy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0e12; --surface: #15171e; --surface2: #1e2130;
+    --border: rgba(255,255,255,0.07); --border-bright: rgba(255,255,255,0.15);
+    --accent: #7c6ef0; --accent2: #5ee7b7; --text: #f0f0f4;
+    --muted: #7a7d8e; --radius: 14px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height: 100vh; overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; top: -200px; left: 50%;
+    transform: translateX(-50%); width: 700px; height: 500px;
+    background: radial-gradient(ellipse, rgba(124,110,240,0.10) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 0 24px; display: flex; align-items: center;
+    justify-content: space-between; height: 60px; position: sticky;
+    top: 0; z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+  }
+  .nav-logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 15px;
+  }
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif; font-size: 20px;
+    background: linear-gradient(90deg, #fff 0%, var(--accent2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-size: 14px; color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    padding: 8px 18px; background: var(--accent); color: #fff;
+    border-radius: 8px; font-size: 13px; font-weight: 500;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative; z-index: 1;
+    padding: 52px 24px 40px; text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    background: rgba(124,110,240,0.12); color: #a99ef5;
+    border: 1px solid rgba(124,110,240,0.25); border-radius: 20px;
+    padding: 4px 14px; margin-bottom: 16px;
+  }
+  .page-title {
+    font-size: 38px; font-weight: 600; margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .page-meta { font-size: 14px; color: var(--muted); }
+  .page-meta span { color: var(--accent2); font-weight: 500; }
+
+  /* CONTENT */
+  .content-wrap {
+    position: relative; z-index: 1;
+    max-width: 760px; margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .privacy-highlight {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: rgba(94,231,183,0.06); border: 1px solid rgba(94,231,183,0.2);
+    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 40px;
+  }
+  .highlight-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .highlight-text { font-size: 15px; line-height: 1.7; color: var(--text); }
+  .highlight-text strong { color: var(--accent2); }
+
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 20px; font-weight: 600; margin-bottom: 14px;
+    color: var(--text); display: flex; align-items: center; gap: 10px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  h2 .sec-num {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: rgba(124,110,240,0.15); color: var(--accent);
+    font-size: 13px; font-weight: 600; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+  ul {
+    list-style: none; display: flex; flex-direction: column;
+    gap: 10px; margin-bottom: 14px;
+  }
+  ul li {
+    font-size: 15px; color: var(--muted); line-height: 1.7;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  ul li::before {
+    content: '→'; color: var(--accent); flex-shrink: 0;
+    font-weight: 600; margin-top: 1px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .contact-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    display: flex; gap: 16px; align-items: center;
+  }
+  .contact-card-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(124,110,240,0.12); display: flex;
+    align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .contact-card-text p { font-size: 14px; margin-bottom: 4px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface); border-top: 1px solid var(--border);
+    padding: 28px 24px; text-align: center;
+  }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy { font-size: 12px; color: var(--muted); }
+  .active-link { color: var(--text) !important; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">✂️</div>
+    <span class="nav-logo-text">EraseAI</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html" class="active-link">Privacy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="index.html" class="nav-cta">Try the Tool →</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-tag">Legal</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">Last updated: <span>January 1, 2025</span> &nbsp;·&nbsp; Effective immediately</p>
+</div>
+
+<div class="content-wrap">
+
+  <div class="privacy-highlight">
+    <div class="highlight-icon">🔒</div>
+    <div class="highlight-text">
+      <strong>The short version:</strong> EraseAI processes all images directly in your browser using on-device AI. Your photos are <strong>never uploaded to any server</strong>, never stored, and never shared with anyone — not even us. We have zero access to your images.
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="sec-num">1</span> Who We Are</h2>
+    <p>EraseAI ("we", "us", or "our") operates the website at eraseai.com, which provides a free, browser-based AI background removal tool. This Privacy Policy explains how we handle information when you use our service.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">2</span> Image Data — The Most Important Part</h2>
+    <p>EraseAI is built with a privacy-first architecture. When you upload an image to our tool:</p>
+    <ul>
+      <li>Your image is processed entirely within your own web browser using WebAssembly and local AI models.</li>
+      <li>Your image is never transmitted to our servers or any third-party server.</li>
+      <li>Your image is never stored, cached, logged, or retained in any form.</li>
+      <li>The AI model (RMBG-1.4) runs locally on your device — no cloud processing occurs.</li>
+      <li>When you close the browser tab, all image data is immediately discarded.</li>
+    </ul>
+    <p>We technically cannot view your images because they never leave your device. This is by design.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">3</span> Information We Collect Automatically</h2>
+    <p>Like all websites, we may collect basic non-personal technical data through our hosting infrastructure and analytics:</p>
+    <ul>
+      <li><strong>Log data:</strong> IP address, browser type, pages visited, time and date of visit, referring URL. This is standard web server logging and does not identify you personally.</li>
+      <li><strong>Usage analytics:</strong> General usage patterns such as which pages are visited and how long sessions last. We use this to improve the tool.</li>
+      <li><strong>Device information:</strong> Browser version, operating system, and screen resolution for compatibility purposes.</li>
+    </ul>
+    <p>This data is aggregated and anonymised. We do not build profiles of individual users.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">4</span> Cookies</h2>
+    <p>EraseAI uses minimal cookies necessary for the site to function and for basic analytics. We do not use tracking cookies, advertising cookies beyond Google AdSense (described below), or cross-site tracking.</p>
+    <ul>
+      <li><strong>Functional cookies:</strong> Used to remember your output format preference within a session.</li>
+      <li><strong>Analytics cookies:</strong> Anonymous visit counting to understand traffic volume.</li>
+      <li><strong>AdSense cookies:</strong> Google AdSense may place cookies to serve relevant ads. See Section 5.</li>
+    </ul>
+    <p>You can disable cookies in your browser settings. The core background removal tool will continue to work without cookies.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">5</span> Google AdSense & Third-Party Advertising</h2>
+    <p>EraseAI displays advertisements served by Google AdSense to keep the service free for all users. Google AdSense may:</p>
+    <ul>
+      <li>Use cookies and web beacons to serve ads based on your prior visits to this and other websites.</li>
+      <li>Collect data about your browsing activity to show personalised advertisements.</li>
+      <li>Use the DoubleClick cookie to serve ads across the web.</li>
+    </ul>
+    <p>You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google's Ad Settings</a>. You may also opt out via the <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener">Network Advertising Initiative opt-out page</a>.</p>
+    <p>For more information on how Google uses data from sites that use Google services, please visit: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses data</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">6</span> Third-Party Services</h2>
+    <p>EraseAI uses the following third-party services which may collect data subject to their own privacy policies:</p>
+    <ul>
+      <li><strong>Google Fonts:</strong> Used for typography. Google may log requests for font files. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+      <li><strong>HuggingFace CDN (cdn.jsdelivr.net):</strong> The AI model files are downloaded from this CDN on first use. Standard CDN access logs may be retained.</li>
+      <li><strong>Cloudflare / Vercel:</strong> Our hosting provider handles request routing and may log IP addresses as part of standard infrastructure operation.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">7</span> Children's Privacy</h2>
+    <p>EraseAI is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">8</span> Your Rights</h2>
+    <p>Depending on your location, you may have rights including:</p>
+    <ul>
+      <li>The right to access personal data we hold about you (we hold very little).</li>
+      <li>The right to request deletion of any personal data.</li>
+      <li>The right to opt out of personalised advertising.</li>
+      <li>If you are in the EU/EEA, rights under GDPR including data portability and the right to object to processing.</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at the address in Section 10.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">9</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this page periodically. Continued use of EraseAI after changes constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">10</span> Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or how we handle your data, please reach out:</p>
+    <div class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <div class="contact-card-text">
+        <p style="color:var(--text);font-weight:500;">EraseAI — Privacy Enquiries</p>
+        <p><a href="mailto:privacy@eraseai.com">privacy@eraseai.com</a></p>
+        <p style="font-size:13px;margin-top:4px;">We aim to respond to all enquiries within 48 hours.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html" class="active-link">Privacy Policy</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 EraseAI — Free AI Background Remover. All image processing happens locally in your browser. We never store your images.</p>
+</footer>
+
+</body>
+</html>

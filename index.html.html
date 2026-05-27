@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EraseAI — Free AI Background Remover Online | Remove Image Background Instantly</title>
+<meta name="description" content="EraseAI is a free AI-powered background remover. Remove image backgrounds instantly online — no signup, no upload limits. Works with photos, portraits, products & logos. 100% private, runs in your browser.">
+<meta name="keywords" content="AI background remover, remove background from image, free background remover, background eraser, remove image background online, AI photo editor, transparent background maker, background removal tool, remove background free, photo background remover AI">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EraseAI">
+<link rel="canonical" href="https://eraseai.com/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eraseai.com/">
+<meta property="og:title" content="EraseAI — Free AI Background Remover Online">
+<meta property="og:description" content="Remove image backgrounds instantly with AI. Free, no signup required. Works on portraits, products, logos and more. Runs entirely in your browser.">
+<meta property="og:image" content="https://eraseai.com/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://eraseai.com/">
+<meta name="twitter:title" content="EraseAI — Free AI Background Remover Online">
+<meta name="twitter:description" content="Remove image backgrounds instantly with AI. Free, no signup. Runs 100% in your browser.">
+<meta name="twitter:image" content="https://eraseai.com/og-image.png">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EraseAI",
+  "url": "https://eraseai.com",
+  "description": "Free AI-powered background remover. Remove image backgrounds instantly online with no signup and no upload limits.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "AI Background Removal",
+    "Transparent PNG Export",
+    "Browser-based Processing",
+    "No signup required",
+    "Supports JPG PNG WEBP"
+  ]
+}
+</script>
+
+<!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d0e12;
+    --surface: #15171e;
+    --surface2: #1e2130;
+    --border: rgba(255,255,255,0.07);
+    --border-bright: rgba(255,255,255,0.15);
+    --accent: #7c6ef0;
+    --accent2: #5ee7b7;
+    --text: #f0f0f4;
+    --muted: #7a7d8e;
+    --danger: #e05a5a;
+    --radius: 14px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Ambient glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(ellipse, rgba(124,110,240,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === TOP AD BANNER === */
+  .ad-top {
+    width: 100%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    min-height: 90px;
+    position: relative;
+    z-index: 10;
+  }
+  .ad-label {
+    position: absolute;
+    top: 4px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .ad-placeholder {
+    width: 728px; height: 90px;
+    background: var(--surface2);
+    border: 1px dashed var(--border-bright);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 13px;
+    gap: 8px;
+  }
+  @media (max-width: 780px) {
+    .ad-placeholder { width: 320px; height: 50px; }
+  }
+
+  /* === HEADER === */
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 32px 24px 0;
+    text-align: center;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .logo-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    background: linear-gradient(90deg, #fff 0%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .tagline {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+  }
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .badge-green { background: rgba(94,231,183,0.12); color: var(--accent2); border: 1px solid rgba(94,231,183,0.25); }
+  .badge-purple { background: rgba(124,110,240,0.12); color: #a99ef5; border: 1px solid rgba(124,110,240,0.25); }
+  .badge-gray { background: rgba(255,255,255,0.06); color: var(--muted); border: 1px solid var(--border); }
+
+  /* === MAIN LAYOUT === */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+  }
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; }
+  }
+
+  /* === TOOL PANEL === */
+  .tool-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* === DROP ZONE === */
+  .drop-zone {
+    background: var(--surface);
+    border: 2px dashed var(--border-bright);
+    border-radius: var(--radius);
+    padding: 52px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .drop-zone:hover, .drop-zone.drag-over {
+    border-color: var(--accent);
+    background: rgba(124,110,240,0.05);
+  }
+  .drop-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%; height: 100%;
+  }
+  .drop-icon {
+    width: 56px; height: 56px;
+    background: var(--surface2);
+    border: 1px solid var(--border-bright);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 24px;
+  }
+  .drop-title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .drop-sub {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .drop-sub span {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .file-types {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .file-type {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* === CANVAS AREA === */
+  .canvas-area {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: none;
+  }
+  .canvas-area.visible { display: block; }
+
+  .canvas-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab-btn.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+    background: rgba(124,110,240,0.06);
+  }
+
+  .canvas-view {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    position: relative;
+  }
+  .checker-bg {
+    background-image: linear-gradient(45deg, #1a1d27 25%, transparent 25%),
+                      linear-gradient(-45deg, #1a1d27 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #1a1d27 75%),
+                      linear-gradient(-45deg, transparent 75%, #1a1d27 75%);
+    background-size: 18px 18px;
+    background-position: 0 0, 0 9px, 9px -9px, -9px 0px;
+    background-color: #12141b;
+  }
+  #preview-img, #result-img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    display: block;
+  }
+
+  /* === PROGRESS === */
+  .progress-wrap {
+    padding: 32px 24px;
+    text-align: center;
+    display: none;
+  }
+  .progress-wrap.visible { display: block; }
+  .progress-bar-bg {
+    width: 100%;
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 16px 0 8px;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+  .progress-label {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .spinner {
+    display: inline-block;
+    width: 20px; height: 20px;
+    border: 2px solid var(--border-bright);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* === ACTION BUTTONS === */
+  .action-row {
+    display: flex;
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .btn {
+    flex: 1;
+    padding: 11px 18px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 120px;
+    text-decoration: none;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), #5c50d0);
+    color: #fff;
+  }
+  .btn-primary:hover:not(:disabled) { opacity: 0.88; }
+  .btn-secondary {
+    background: var(--surface2);
+    color: var(--text);
+    border: 1px solid var(--border-bright);
+  }
+  .btn-secondary:hover:not(:disabled) { background: rgba(255,255,255,0.07); }
+  .btn-success {
+    background: rgba(94,231,183,0.15);
+    color: var(--accent2);
+    border: 1px solid rgba(94,231,183,0.3);
+  }
+  .btn-success:hover:not(:disabled) { background: rgba(94,231,183,0.22); }
+
+  /* === SETTINGS PANEL === */
+  .settings-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: none;
+  }
+  .settings-card.visible { display: block; }
+  .settings-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+  }
+  .setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .setting-row:last-child { margin-bottom: 0; }
+  .setting-label { font-size: 14px; }
+  .setting-sub { font-size: 12px; color: var(--muted); }
+  select.select-input {
+    background: var(--surface2);
+    border: 1px solid var(--border-bright);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 6px 10px;
+    cursor: pointer;
+    outline: none;
+  }
+  select.select-input:focus { border-color: var(--accent); }
+  .toggle {
+    position: relative;
+    width: 42px; height: 24px;
+  }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--surface2);
+    border: 1px solid var(--border-bright);
+    border-radius: 24px;
+    transition: 0.2s;
+  }
+  .slider::before {
+    content: '';
+    position: absolute;
+    height: 16px; width: 16px;
+    left: 3px; bottom: 3px;
+    background: var(--muted);
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .toggle input:checked + .slider { background: rgba(124,110,240,0.25); border-color: var(--accent); }
+  .toggle input:checked + .slider::before { transform: translateX(18px); background: var(--accent); }
+
+  /* === STATS ROW === */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    display: none;
+  }
+  .stats-row.visible { display: grid; }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent2);
+  }
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* === SIDEBAR === */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* === SIDEBAR AD === */
+  .ad-sidebar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: sticky;
+    top: 20px;
+  }
+  .ad-sidebar-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 6px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .ad-sidebar-content {
+    width: 100%; min-height: 600px;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 12px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    text-align: center;
+  }
+  .ad-sidebar-content span { font-size: 28px; opacity: 0.3; }
+
+  /* === HOW-TO SECTION === */
+  .howto {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .howto-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .step:last-child { margin-bottom: 0; }
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    background: rgba(124,110,240,0.15);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* === FOOTER AD === */
+  .ad-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    gap: 12px;
+    flex-direction: column;
+  }
+  .ad-footer-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy { font-size: 12px; color: var(--muted); }
+
+  /* === ERROR STATE === */
+  .error-msg {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(224,90,90,0.1);
+    border: 1px solid rgba(224,90,90,0.3);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #f08080;
+  }
+  .error-msg.visible { display: flex; }
+
+  /* === SUCCESS BANNER === */
+  .success-banner {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(94,231,183,0.08);
+    border: 1px solid rgba(94,231,183,0.25);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--accent2);
+  }
+  .success-banner.visible { display: flex; }
+
+  /* === CANVAS HIDDEN === */
+  #output-canvas { display: none; }
+
+  .processing-steps {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+  .step-indicator.active { opacity: 1; color: var(--accent2); }
+  .step-indicator.done { opacity: 0.7; }
+  .step-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP LEADERBOARD AD (728x90) -->
+<div class="ad-top">
+  <span class="ad-label">Advertisement</span>
+  <!-- Replace the placeholder div below with your AdSense ins tag -->
+  <div class="ad-placeholder">
+    📢 Google AdSense — 728×90 Leaderboard
+    <!--
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">✂️</div>
+    <span class="logo-text">EraseAI</span>
+  </div>
+  <p class="tagline">Free AI Background Remover — remove image backgrounds instantly, no signup needed</p>
+  <div class="badge-row">
+    <span class="badge badge-green">✓ 100% Free</span>
+    <span class="badge badge-purple">✦ AI Powered</span>
+    <span class="badge badge-gray">🔒 Private — runs in browser</span>
+  </div>
+</header>
+
+<main>
+  <div class="tool-panel">
+
+    <!-- DROP ZONE -->
+    <div class="drop-zone" id="drop-zone">
+      <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif">
+      <div class="drop-icon">🖼️</div>
+      <p class="drop-title">Drop your image here</p>
+      <p class="drop-sub">or <span>browse files</span> to upload</p>
+      <div class="file-types">
+        <span class="file-type">JPG</span>
+        <span class="file-type">PNG</span>
+        <span class="file-type">WEBP</span>
+        <span class="file-type">GIF</span>
+      </div>
+    </div>
+
+    <!-- ERROR -->
+    <div class="error-msg" id="error-msg">
+      ⚠️ <span id="error-text">Something went wrong. Please try again.</span>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-banner" id="success-banner">
+      ✅ Background removed! Download your image below.
+    </div>
+
+    <!-- CANVAS AREA -->
+    <div class="canvas-area" id="canvas-area">
+      <div class="canvas-tabs">
+        <button class="tab-btn active" id="tab-original" onclick="switchTab('original')">Original</button>
+        <button class="tab-btn" id="tab-result" onclick="switchTab('result')" disabled>Result</button>
+      </div>
+
+      <div class="canvas-view" id="view-original">
+        <img id="preview-img" src="" alt="Original image">
+      </div>
+
+      <div class="canvas-view checker-bg" id="view-result" style="display:none;">
+        <img id="result-img" src="" alt="Result image with background removed">
+      </div>
+
+      <!-- PROGRESS STATE -->
+      <div class="progress-wrap" id="progress-wrap">
+        <div class="spinner"></div>
+        <p style="font-size:15px;font-weight:500;margin-bottom:4px">Removing background…</p>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+        <p class="progress-label" id="progress-label">Initializing AI model…</p>
+        <div class="processing-steps">
+          <div class="step-indicator" id="si-load">
+            <span class="step-dot"></span> Loading AI model
+          </div>
+          <div class="step-indicator" id="si-analyze">
+            <span class="step-dot"></span> Analyzing image
+          </div>
+          <div class="step-indicator" id="si-segment">
+            <span class="step-dot"></span> Segmenting foreground
+          </div>
+          <div class="step-indicator" id="si-mask">
+            <span class="step-dot"></span> Applying transparency mask
+          </div>
+          <div class="step-indicator" id="si-done">
+            <span class="step-dot"></span> Finishing up
+          </div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button class="btn btn-primary" id="btn-remove" onclick="removeBackground()" disabled>
+          ✂️ Remove Background
+        </button>
+        <button class="btn btn-success" id="btn-download" onclick="downloadResult()" disabled style="display:none;">
+          ⬇️ Download PNG
+        </button>
+        <button class="btn btn-secondary" onclick="resetTool()">
+          🔄 New Image
+        </button>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="settings-card" id="settings-card">
+      <div class="settings-title">Output Settings</div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label">Output Format</div>
+          <div class="setting-sub">File format to save</div>
+        </div>
+        <select class="select-input" id="output-format">
+          <option value="png">PNG (transparent)</option>
+          <option value="jpg">JPG (white bg)</option>
+          <option value="webp">WEBP</option>
+        </select>
+      </div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label">High Quality</div>
+          <div class="setting-sub">Slower but better edges</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="high-quality" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label">White Background</div>
+          <div class="setting-sub">Instead of transparent</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="white-bg">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-size">—</div>
+        <div class="stat-lbl">Original Size</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-dims">—</div>
+        <div class="stat-lbl">Dimensions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-time">—</div>
+        <div class="stat-lbl">Process Time</div>
+      </div>
+    </div>
+
+    <!-- IN-CONTENT AD (after tool) -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+      <div style="font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;text-align:center;padding:6px;border-bottom:1px solid var(--border);background:var(--surface2);">Advertisement</div>
+      <div style="min-height:90px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;gap:8px;">
+        📢 Google AdSense — 468×60 / Responsive
+        <!--
+        <ins class="adsbygoogle"
+             style="display:block;text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+
+    <!-- HOW TO USE -->
+    <div class="howto">
+      <div class="howto-title">How to use EraseAI — AI Background Remover</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Upload any photo — portrait, product shot, logo, or object.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Click <strong>Remove Background</strong>. Our AI processes the image entirely in your browser.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Preview the result in the <em>Result</em> tab on the transparent checkerboard.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Download as PNG (transparent), WEBP, or JPG with white background.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <!-- SIDEBAR AD (160x600 or 300x600) -->
+    <div class="ad-sidebar">
+      <div class="ad-sidebar-label">Advertisement</div>
+      <div class="ad-sidebar-content">
+        <span>📢</span>
+        Google AdSense<br>300×600<br>Half Page Ad
+        <!--
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:300px;height:600px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+
+    <!-- TIPS CARD -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;">
+      <div style="font-size:13px;font-weight:600;margin-bottom:12px;">💡 Tips for best results</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;"><span>🎯</span> Use images with a clear subject and distinct contrast</li>
+        <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;"><span>💡</span> Well-lit photos with even lighting work best</li>
+        <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;"><span>📸</span> Higher resolution = sharper edges in the result</li>
+        <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;"><span>🔒</span> Your image never leaves your device</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER AD (728x90) -->
+<div class="ad-footer">
+  <div class="ad-footer-label">Advertisement</div>
+  <div class="ad-placeholder">
+    📢 Google AdSense — 728×90 Leaderboard (Footer)
+    <!--
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 EraseAI — Free AI Background Remover. All image processing happens locally in your browser. We never store your images.</p>
+</footer>
+
+<!-- Hidden canvas for processing -->
+<canvas id="output-canvas"></canvas>
+
+<!-- HuggingFace Transformers.js — RMBG-1.4 background removal model -->
+<script type="module">
+  import { AutoModel, AutoProcessor, RawImage, env }
+    from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.1.2/dist/transformers.min.js';
+
+  env.allowLocalModels = false;
+
+  let hfModel = null;
+  let hfProcessor = null;
+
+  window.hfLib = {
+    async ensureLoaded(onStep) {
+      if (hfModel && hfProcessor) return;
+      onStep('si-load', 20, 'Downloading RMBG-1.4 AI model (first load ~20s)…');
+      [hfModel, hfProcessor] = await Promise.all([
+        AutoModel.from_pretrained('briaai/RMBG-1.4', { config: { model_type: 'custom' } }),
+        AutoProcessor.from_pretrained('briaai/RMBG-1.4', {
+          config: {
+            do_normalize: true, do_pad: false, do_rescale: true, do_resize: true,
+            image_mean: [0.5, 0.5, 0.5], image_std: [1, 1, 1],
+            feature_extractor_type: 'ImageFeatureExtractor',
+            resample: 2, rescale_factor: 0.00392156862745098,
+            size: { width: 1024, height: 1024 }
+          }
+        })
+      ]);
+    },
+
+    async removeBackground(file, onStep) {
+      await this.ensureLoaded(onStep);
+      onStep('si-analyze', 45, 'Analyzing image content…');
+      const objUrl = URL.createObjectURL(file);
+      const image = await RawImage.fromURL(objUrl);
+      URL.revokeObjectURL(objUrl);
+
+      onStep('si-segment', 62, 'Segmenting foreground subject…');
+      const { pixel_values } = await hfProcessor(image);
+
+      onStep('si-mask', 80, 'Running AI inference…');
+      const { output } = await hfModel({ input: pixel_values });
+
+      onStep('si-done', 93, 'Applying transparency mask…');
+      const mask = await RawImage.fromTensor(output[0].mul(255).to('uint8'))
+                                 .resize(image.width, image.height);
+
+      const canvas = document.createElement('canvas');
+      canvas.width = image.width;
+      canvas.height = image.height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(image.toCanvas(), 0, 0);
+      const imgData = ctx.getImageData(0, 0, image.width, image.height);
+      for (let i = 0; i < mask.data.length; i++) imgData.data[4 * i + 3] = mask.data[i];
+      ctx.putImageData(imgData, 0, 0);
+
+      return new Promise(res => canvas.toBlob(res, 'image/png'));
+    }
+  };
+
+  document.dispatchEvent(new CustomEvent('hfReady'));
+</script>
+
+<script>
+  let originalFile = null;
+  let resultBlob = null;
+  let startTime = null;
+
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+  const canvasArea = document.getElementById('canvas-area');
+  const settingsCard = document.getElementById('settings-card');
+  const statsRow = document.getElementById('stats-row');
+  const progressWrap = document.getElementById('progress-wrap');
+  const progressBar = document.getElementById('progress-bar');
+  const progressLabel = document.getElementById('progress-label');
+  const previewImg = document.getElementById('preview-img');
+  const resultImg = document.getElementById('result-img');
+  const btnRemove = document.getElementById('btn-remove');
+  const btnDownload = document.getElementById('btn-download');
+  const errorMsg = document.getElementById('error-msg');
+  const errorText = document.getElementById('error-text');
+  const successBanner = document.getElementById('success-banner');
+
+  // Drag & drop
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const files = e.dataTransfer.files;
+    if (files[0]) handleFile(files[0]);
+  });
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) {
+      showError('Please upload a valid image file (JPG, PNG, WEBP, GIF).');
+      return;
+    }
+    if (file.size > 20 * 1024 * 1024) {
+      showError('File too large. Maximum supported size is 20MB.');
+      return;
+    }
+
+    originalFile = file;
+    resultBlob = null;
+    hideError();
+    successBanner.classList.remove('visible');
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      previewImg.src = e.target.result;
+      resultImg.src = '';
+    };
+    reader.readAsDataURL(file);
+
+    // Show UI
+    canvasArea.classList.add('visible');
+    settingsCard.classList.add('visible');
+    dropZone.style.display = 'none';
+
+    // Stats
+    document.getElementById('stat-size').textContent = formatSize(file.size);
+    statsRow.classList.add('visible');
+
+    // Load dims
+    const img = new Image();
+    img.onload = () => {
+      document.getElementById('stat-dims').textContent = img.width + '×' + img.height;
+    };
+    img.src = URL.createObjectURL(file);
+
+    btnRemove.disabled = false;
+    btnDownload.style.display = 'none';
+    btnDownload.disabled = true;
+    switchTab('original');
+
+    // Reset result tab
+    document.getElementById('tab-result').disabled = true;
+  }
+
+  function switchTab(tab) {
+    const origBtn = document.getElementById('tab-original');
+    const resBtn = document.getElementById('tab-result');
+    const origView = document.getElementById('view-original');
+    const resView = document.getElementById('view-result');
+    const progWrap = document.getElementById('progress-wrap');
+
+    if (tab === 'original') {
+      origBtn.classList.add('active');
+      resBtn.classList.remove('active');
+      origView.style.display = 'flex';
+      resView.style.display = 'none';
+      progWrap.classList.remove('visible');
+    } else {
+      origBtn.classList.remove('active');
+      resBtn.classList.add('active');
+      origView.style.display = 'none';
+      if (resultImg.src && resultImg.src !== window.location.href) {
+        resView.style.display = 'flex';
+        progWrap.classList.remove('visible');
+      }
+    }
+  }
+
+  function setStep(id) {
+    ['si-load','si-analyze','si-segment','si-mask','si-done'].forEach(s => {
+      const el = document.getElementById(s);
+      if (s === id) el.classList.add('active');
+      else if (['si-load','si-analyze','si-segment','si-mask','si-done'].indexOf(s) < ['si-load','si-analyze','si-segment','si-mask','si-done'].indexOf(id)) {
+        el.classList.remove('active');
+        el.classList.add('done');
+      }
+    });
+  }
+
+  async function removeBackground() {
+    if (!originalFile) return;
+    if (!window.hfLib) {
+      showError('AI library is still loading — please wait a moment and try again.');
+      return;
+    }
+    startTime = Date.now();
+    hideError();
+    successBanner.classList.remove('visible');
+
+    btnRemove.disabled = true;
+    btnDownload.style.display = 'none';
+
+    const origView = document.getElementById('view-original');
+    const resView = document.getElementById('view-result');
+    origView.style.display = 'none';
+    resView.style.display = 'none';
+    progressWrap.classList.add('visible');
+    progressWrap.style.display = 'block';
+
+    const onStep = (stepId, pct, label) => {
+      setStep(stepId);
+      progressBar.style.width = pct + '%';
+      progressLabel.textContent = label;
+    };
+
+    try {
+      const blob = await window.hfLib.removeBackground(originalFile, onStep);
+
+      progressBar.style.width = '100%';
+      progressLabel.textContent = 'Done!';
+
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+      document.getElementById('stat-time').textContent = elapsed + 's';
+
+      let finalBlob = blob;
+      const format = document.getElementById('output-format').value;
+      const whiteBg = document.getElementById('white-bg').checked;
+
+      if (format !== 'png' || whiteBg) {
+        finalBlob = await convertBlob(blob, format, whiteBg);
+      }
+
+      resultBlob = finalBlob;
+      resultImg.src = URL.createObjectURL(finalBlob);
+      resultImg.onload = () => {
+        progressWrap.classList.remove('visible');
+        progressWrap.style.display = 'none';
+        document.getElementById('tab-result').disabled = false;
+        switchTab('result');
+        successBanner.classList.add('visible');
+        btnDownload.style.display = '';
+        btnDownload.disabled = false;
+        btnRemove.disabled = false;
+      };
+
+    } catch (err) {
+      progressWrap.classList.remove('visible');
+      progressWrap.style.display = 'none';
+      origView.style.display = 'flex';
+      showError('Background removal failed: ' + (err.message || 'unknown error. Check internet connection.'));
+      btnRemove.disabled = false;
+    }
+  }
+
+  function convertBlob(blob, format, whiteBg) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.getElementById('output-canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        if (whiteBg || format === 'jpg') {
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        ctx.drawImage(img, 0, 0);
+        const mimeMap = { png: 'image/png', jpg: 'image/jpeg', webp: 'image/webp' };
+        canvas.toBlob(b => b ? resolve(b) : reject(new Error('Conversion failed')), mimeMap[format] || 'image/png', 0.92);
+      };
+      img.onerror = () => reject(new Error('Image load error'));
+      img.src = URL.createObjectURL(blob);
+    });
+  }
+
+  function downloadResult() {
+    if (!resultBlob) return;
+    const format = document.getElementById('output-format').value;
+    const ext = format === 'jpg' ? 'jpg' : format === 'webp' ? 'webp' : 'png';
+    const url = URL.createObjectURL(resultBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'eraseai-result.' + ext;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }
+
+  function resetTool() {
+    originalFile = null;
+    resultBlob = null;
+    fileInput.value = '';
+    previewImg.src = '';
+    resultImg.src = '';
+    dropZone.style.display = '';
+    canvasArea.classList.remove('visible');
+    settingsCard.classList.remove('visible');
+    statsRow.classList.remove('visible');
+    successBanner.classList.remove('visible');
+    hideError();
+    btnRemove.disabled = true;
+    btnDownload.style.display = 'none';
+    progressBar.style.width = '0%';
+    ['si-load','si-analyze','si-segment','si-mask','si-done'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('active', 'done');
+    });
+  }
+
+  function showError(msg) {
+    errorText.textContent = msg;
+    errorMsg.classList.add('visible');
+  }
+  function hideError() {
+    errorMsg.classList.remove('visible');
+  }
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + 'B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + 'KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + 'MB';
+  }
+
+  // Listen for HuggingFace library ready
+  document.addEventListener('hfReady', () => {
+    console.log('EraseAI: RMBG-1.4 model ready');
+  });
+</script>
+
+</body>
+</html>
