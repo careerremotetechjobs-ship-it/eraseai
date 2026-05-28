@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Converter Online — EraseAI | Convert JPG PNG WEBP</title>
+<meta name="description" content="Convert images between JPG, PNG, WEBP, and BMP formats online for free. No signup required. Runs entirely in your browser — instant and private.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eraseai.com/image-converter.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0e12;--surface:#15171e;--surface2:#1e2130;--border:rgba(255,255,255,0.07);--border-bright:rgba(255,255,255,0.15);--accent:#7c6ef0;--accent2:#5ee7b7;--text:#f0f0f4;--muted:#7a7d8e;--radius:14px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(124,110,240,0.10) 0%,transparent 70%);pointer-events:none;z-index:0}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:18px;background:linear-gradient(90deg,#fff 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.nav-links a{font-size:12px;color:var(--muted);padding:5px 11px;border-radius:20px;text-decoration:none;border:1px solid var(--border);transition:color .2s}
+.nav-links a:hover{color:var(--text);border-color:var(--border-bright)}
+.nav-links a.active{color:var(--accent2);background:rgba(94,231,183,0.1);border-color:rgba(94,231,183,0.2)}
+.ad-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:8px;text-align:center;min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.ad-bar-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.ad-ph{width:728px;max-width:100%;height:90px;background:var(--surface2);border:1px dashed var(--border-bright);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+header{position:relative;z-index:1;padding:36px 24px 0;text-align:center}
+.page-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(231,160,94,0.12);color:#f5c07a;border:1px solid rgba(231,160,94,0.25);border-radius:20px;padding:4px 14px;margin-bottom:12px}
+h1{font-size:34px;font-weight:600;margin-bottom:8px;background:linear-gradient(135deg,var(--text) 0%,var(--muted) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:15px;color:var(--muted)}
+main{position:relative;z-index:1;max-width:860px;margin:32px auto;padding:0 20px 80px;display:flex;flex-direction:column;gap:20px}
+.drop-zone{background:var(--surface);border:2px dashed var(--border-bright);border-radius:var(--radius);padding:48px 24px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--accent);background:rgba(124,110,240,0.05)}
+.drop-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.drop-icon{width:52px;height:52px;background:var(--surface2);border:1px solid var(--border-bright);border-radius:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:22px}
+.drop-title{font-size:16px;font-weight:500;margin-bottom:5px}
+.drop-sub{font-size:13px;color:var(--muted)}
+.drop-sub span{color:var(--accent);font-weight:500}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.ctrl-section{padding:24px}
+.ctrl-title{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
+.convert-flow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.format-box{flex:1;min-width:120px}
+.format-box label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px;font-weight:500}
+.format-select{width:100%;padding:12px 14px;background:var(--surface2);border:1px solid var(--border-bright);border-radius:9px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;outline:none;cursor:pointer;transition:border-color .2s}
+.format-select:focus{border-color:var(--accent)}
+.format-select option{background:var(--surface2)}
+.arrow-icon{font-size:24px;color:var(--accent);flex-shrink:0;padding-top:20px}
+.conversion-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.conv-badge{font-size:11px;font-weight:500;padding:4px 10px;border-radius:6px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s}
+.conv-badge:hover{border-color:var(--accent);color:var(--accent)}
+.preview-area{padding:20px;text-align:center;display:none}
+.preview-area.visible{display:block}
+.preview-area img{max-width:100%;max-height:300px;border-radius:8px;border:1px solid var(--border)}
+.preview-label{font-size:12px;color:var(--muted);margin-top:8px}
+.info-strip{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;padding:14px 24px;background:rgba(94,231,183,0.04);border-top:1px solid rgba(94,231,183,0.1);display:none}
+.info-strip.visible{display:flex}
+.info-chip{font-size:13px;color:var(--muted)}
+.info-chip strong{color:var(--text)}
+.action-row{display:flex;gap:10px;padding:16px 24px;border-top:1px solid var(--border);flex-wrap:wrap}
+.btn{flex:1;padding:11px 18px;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:opacity .2s,transform .1s;display:flex;align-items:center;justify-content:center;gap:7px;min-width:120px}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#5c50d0);color:#fff}
+.btn-primary:hover:not(:disabled){opacity:.88}
+.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border-bright)}
+.btn-success{background:rgba(94,231,183,0.15);color:var(--accent2);border:1px solid rgba(94,231,183,0.3)}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center}
+.footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:10px;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{font-size:12px;color:var(--muted)}
+canvas{display:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">✂️</div>
+    <span class="nav-logo-text">EraseAI</span>
+  </a>
+  <div class="nav-links">
+    <a href="bg-remover.html">✂️ BG Remover</a>
+    <a href="image-resizer.html">📐 Resizer</a>
+    <a href="image-compressor.html">🗜️ Compressor</a>
+    <a href="image-converter.html" class="active">🔄 Converter</a>
+    <a href="image-cropper.html">✂️ Cropper</a>
+    <a href="bg-color-changer.html">🎨 BG Color</a>
+    <a href="index.html">🧰 All Tools</a>
+  </div>
+</nav>
+
+<div class="ad-bar">
+  <div class="ad-bar-label">Advertisement</div>
+  <div class="ad-ph">📢 Google AdSense — 728×90 Leaderboard</div>
+</div>
+
+<header>
+  <div class="page-tag">🔄 Image Converter</div>
+  <h1>Free Image Converter Online</h1>
+  <p class="subtitle">Convert between JPG, PNG, WEBP, and BMP instantly — free, private, no signup</p>
+</header>
+
+<main>
+
+  <div class="drop-zone" id="drop-zone">
+    <input type="file" id="file-input" accept="image/*">
+    <div class="drop-icon">🔄</div>
+    <p class="drop-title">Drop your image here</p>
+    <p class="drop-sub">or <span>browse to upload</span></p>
+  </div>
+
+  <div class="card" id="controls-card" style="display:none;">
+    <div class="ctrl-section">
+      <div class="ctrl-title">Conversion Format</div>
+      <div class="convert-flow">
+        <div class="format-box">
+          <label>From (detected)</label>
+          <select class="format-select" id="from-fmt" disabled>
+            <option value="jpg">JPG / JPEG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WEBP</option>
+            <option value="gif">GIF</option>
+            <option value="bmp">BMP</option>
+          </select>
+        </div>
+        <div class="arrow-icon">→</div>
+        <div class="format-box">
+          <label>To (select output)</label>
+          <select class="format-select" id="to-fmt">
+            <option value="image/png|png">PNG (transparent)</option>
+            <option value="image/jpeg|jpg" selected>JPG (smaller)</option>
+            <option value="image/webp|webp">WEBP (modern)</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:14px">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:500;">Quick conversions:</div>
+        <div class="conversion-badges">
+          <span class="conv-badge" onclick="quickConvert('image/jpeg|jpg')">JPG → WEBP</span>
+          <span class="conv-badge" onclick="quickConvert('image/png|png')">JPG → PNG</span>
+          <span class="conv-badge" onclick="quickConvert('image/webp|webp')">PNG → WEBP</span>
+          <span class="conv-badge" onclick="quickConvert('image/jpeg|jpg')">PNG → JPG</span>
+          <span class="conv-badge" onclick="quickConvert('image/png|png')">WEBP → PNG</span>
+          <span class="conv-badge" onclick="quickConvert('image/jpeg|jpg')">WEBP → JPG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-area" id="preview-area">
+      <img id="preview-img" src="" alt="Preview">
+      <p class="preview-label" id="preview-label">—</p>
+    </div>
+
+    <div class="info-strip" id="info-strip">
+      <span class="info-chip">Size: <strong id="info-size">—</strong></span>
+      <span class="info-chip">Dimensions: <strong id="info-dims">—</strong></span>
+      <span class="info-chip">Output: <strong id="info-out">—</strong></span>
+    </div>
+
+    <div class="action-row">
+      <button class="btn btn-primary" id="btn-convert" onclick="convertImage()" disabled>🔄 Convert Image</button>
+      <button class="btn btn-success" id="btn-download" onclick="downloadResult()" style="display:none;">⬇️ Download</button>
+      <button class="btn btn-secondary" onclick="resetTool()">🔄 New Image</button>
+    </div>
+  </div>
+
+</main>
+
+<canvas id="canvas"></canvas>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html">All Tools</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 EraseAI. All processing happens locally in your browser.</p>
+</footer>
+
+<script>
+let origImg = null, origFile = null, resultBlob = null;
+const canvas = document.getElementById('canvas');
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('drag-over'); if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+fileInput.addEventListener('change', () => { if(fileInput.files[0]) handleFile(fileInput.files[0]); });
+
+function handleFile(file) {
+  origFile = file;
+  const ext = file.name.split('.').pop().toLowerCase();
+  const fromSel = document.getElementById('from-fmt');
+  if(['jpg','jpeg'].includes(ext)) fromSel.value='jpg';
+  else if(ext==='png') fromSel.value='png';
+  else if(ext==='webp') fromSel.value='webp';
+  else if(ext==='gif') fromSel.value='gif';
+  else if(ext==='bmp') fromSel.value='bmp';
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    origImg = new Image();
+    origImg.onload = () => {
+      document.getElementById('preview-img').src = e.target.result;
+      document.getElementById('preview-label').textContent = `${file.name} — ${formatSize(file.size)}`;
+      document.getElementById('preview-area').classList.add('visible');
+      document.getElementById('info-size').textContent = formatSize(file.size);
+      document.getElementById('info-dims').textContent = `${origImg.width}×${origImg.height}`;
+      document.getElementById('info-strip').classList.add('visible');
+      document.getElementById('controls-card').style.display = '';
+      document.getElementById('btn-convert').disabled = false;
+      dropZone.style.display = 'none';
+      updateOutputLabel();
+    };
+    origImg.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function quickConvert(val) {
+  document.getElementById('to-fmt').value = val;
+  updateOutputLabel();
+}
+
+function updateOutputLabel() {
+  const val = document.getElementById('to-fmt').value;
+  const ext = val.split('|')[1].toUpperCase();
+  document.getElementById('info-out').textContent = ext;
+}
+
+document.getElementById('to-fmt').addEventListener('change', updateOutputLabel);
+
+function convertImage() {
+  const [mime, ext] = document.getElementById('to-fmt').value.split('|');
+  canvas.width = origImg.width;
+  canvas.height = origImg.height;
+  const ctx = canvas.getContext('2d');
+  if(mime === 'image/jpeg') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,canvas.width,canvas.height); }
+  else { ctx.clearRect(0,0,canvas.width,canvas.height); }
+  ctx.drawImage(origImg, 0, 0);
+  canvas.toBlob(blob => {
+    resultBlob = blob;
+    document.getElementById('btn-download').style.display = '';
+    document.getElementById('info-size').textContent = `${formatSize(origFile.size)} → ${formatSize(blob.size)}`;
+  }, mime, 0.92);
+}
+
+function downloadResult() {
+  if(!resultBlob) return;
+  const ext = document.getElementById('to-fmt').value.split('|')[1];
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(resultBlob);
+  a.download = `eraseai-converted.${ext}`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+}
+
+function resetTool() {
+  origImg = origFile = resultBlob = null;
+  fileInput.value = '';
+  dropZone.style.display = '';
+  document.getElementById('controls-card').style.display = 'none';
+  document.getElementById('preview-area').classList.remove('visible');
+  document.getElementById('info-strip').classList.remove('visible');
+  document.getElementById('btn-download').style.display = 'none';
+  document.getElementById('btn-convert').disabled = true;
+}
+
+function formatSize(b) { if(b<1024) return b+'B'; if(b<1048576) return (b/1024).toFixed(1)+'KB'; return (b/1048576).toFixed(1)+'MB'; }
+</script>
+</body>
+</html>
