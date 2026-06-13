@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F971GVNX43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-F971GVNX43');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Cropper Online — EraseAI</title>
+<meta name="description" content="Drag a crop box over any part of your image and export at the exact ratio you need. Presets for Instagram, YouTube, Amazon, LinkedIn and more. Free, no account needed.">
+<meta name="keywords" content="image cropper online free, crop image online, crop photo online, crop image for instagram, crop image for youtube thumbnail, crop image for amazon, crop image 1:1, 16:9 crop online, aspect ratio crop free, crop jpg png webp free, photo cropper no signup, crop image no watermark">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EraseAI">
+<link rel="canonical" href="https://eraseai.pages.dev/image-cropper.html">
+<link rel="alternate" hreflang="en-us" href="https://eraseai.pages.dev/image-cropper.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eraseai.pages.dev/image-cropper.html">
+<meta property="og:title" content="Free Image Cropper Online — EraseAI">
+<meta property="og:description" content="Drag a crop box over any part of your image and export at the exact ratio you need. Presets for Instagram, YouTube, Amazon, LinkedIn and more. Free, no account needed.">
+<meta property="og:image" content="https://eraseai.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://eraseai.pages.dev/image-cropper.html">
+<meta name="twitter:title" content="Free Image Cropper Online — EraseAI">
+<meta name="twitter:description" content="Drag a crop box over any part of your image and export at the exact ratio you need. Presets for Instagram, YouTube, Amazon, LinkedIn and more. Free, no account needed.">
+<meta name="twitter:image" content="https://eraseai.pages.dev/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EraseAI Image Cropper","url":"https://eraseai.pages.dev/image-cropper.html","description":"Free online image cropper with presets for Instagram, YouTube thumbnails, Amazon product photos. Drag to select crop area. Runs in browser.","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What aspect ratio should I use for Instagram posts?","acceptedAnswer":{"@type":"Answer","text":"Use 1:1 (square) for Instagram feed square posts, 4:5 for portrait feed posts which take up more screen space and typically get more engagement, and 9:16 for Instagram Stories and Reels. All available as one-click presets in EraseAI."}},{"@type":"Question","name":"What size should YouTube thumbnails be?","acceptedAnswer":{"@type":"Answer","text":"YouTube recommends thumbnails at 16:9 aspect ratio (1280×720px). Select the 16:9 preset in EraseAI, drag the crop box over your subject, apply, and download. Keep file size under 2MB."}},{"@type":"Question","name":"How do I crop product images for Amazon?","acceptedAnswer":{"@type":"Answer","text":"Amazon requires product images to be square (1:1 ratio) on a white background, at least 1000px wide. Use the 1:1 crop preset in EraseAI to square your product photo, then use the Background Color Changer to add a white background."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0e12;--surface:#15171e;--surface2:#1e2130;--border:rgba(255,255,255,0.07);--border-bright:rgba(255,255,255,0.15);--accent:#7c6ef0;--accent2:#5ee7b7;--text:#f0f0f4;--muted:#7a7d8e;--radius:14px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(124,110,240,0.10) 0%,transparent 70%);pointer-events:none;z-index:0}
+.site-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100}
+.site-nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.site-nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.site-nav-logo-text{font-family:'Playfair Display',serif;font-size:19px;background:linear-gradient(90deg,#fff 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.site-nav-links{display:flex;gap:4px;align-items:center}
+.site-nav-links a{font-size:14px;color:var(--muted);padding:7px 14px;border-radius:8px;text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;font-weight:500}
+.site-nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+.site-nav-links a.active{color:var(--text)}
+.site-nav-links a.nav-cta{background:var(--accent);color:#fff}
+.site-nav-links a.nav-cta:hover{opacity:.88}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;border-radius:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px;transition:.3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:680px){.hamburger{display:flex}.site-nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 16px;flex-direction:column;gap:4px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.3)}.site-nav-links.open{display:flex}.site-nav-links a{width:100%;padding:11px 14px;font-size:15px;border-radius:10px}}
+.ad-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:8px;text-align:center;min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.ad-bar-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.ad-ph{width:728px;max-width:calc(100% - 32px);height:90px;background:var(--surface2);border:1px dashed var(--border-bright);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+header{position:relative;z-index:1;padding:36px 24px 0;text-align:center}
+.page-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(231,94,160,0.12);color:#f57ab8;border:1px solid rgba(231,94,160,0.25);border-radius:20px;padding:4px 14px;margin-bottom:12px}
+h1{font-size:32px;font-weight:600;margin-bottom:8px;background:linear-gradient(135deg,var(--text) 0%,var(--muted) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+@media(max-width:600px){h1{font-size:24px}}
+.subtitle{font-size:15px;color:var(--muted)}
+main{position:relative;z-index:1;max-width:940px;margin:32px auto;padding:0 20px 60px;display:flex;flex-direction:column;gap:18px}
+.drop-zone{background:var(--surface);border:2px dashed var(--border-bright);border-radius:var(--radius);padding:44px 24px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--accent);background:rgba(124,110,240,0.05)}
+.drop-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.drop-icon{width:52px;height:52px;background:var(--surface2);border:1px solid var(--border-bright);border-radius:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:22px}
+.drop-title{font-size:16px;font-weight:500;margin-bottom:5px}
+.drop-sub{font-size:13px;color:var(--muted)}
+.drop-sub span{color:var(--accent);font-weight:500}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.ratio-bar{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ratio-label{font-size:12px;color:var(--muted);font-weight:500;margin-right:4px;white-space:nowrap}
+.ratio-btn{padding:6px 12px;background:var(--surface2);border:1px solid var(--border-bright);border-radius:8px;color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;white-space:nowrap}
+.ratio-btn:hover{color:var(--text)}
+.ratio-btn.active{color:var(--accent);border-color:var(--accent);background:rgba(124,110,240,0.08)}
+.cropper-wrap{padding:18px;background:var(--surface2);max-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cropper-wrap img{max-width:100%;max-height:460px;display:block}
+.cropper-view-box{outline:2px solid var(--accent);outline-color:rgba(124,110,240,0.75)}
+.cropper-point{background-color:var(--accent)}
+.cropper-line{background-color:var(--accent)}
+.info-bar{display:flex;gap:20px;padding:11px 18px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);flex-wrap:wrap;align-items:center}
+.info-bar strong{color:var(--text)}
+.action-row{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--border);flex-wrap:wrap}
+.btn{flex:1;padding:11px 16px;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:opacity .2s,transform .1s;display:flex;align-items:center;justify-content:center;gap:7px;min-width:110px}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#5c50d0);color:#fff}
+.btn-primary:hover:not(:disabled){opacity:.88}
+.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border-bright)}
+.btn-success{background:rgba(94,231,183,0.15);color:var(--accent2);border:1px solid rgba(94,231,183,0.3)}
+.faq-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-section-header{padding:18px 24px 14px;border-bottom:1px solid var(--border)}
+.faq-section-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.faq-section-sub{font-size:12px;color:var(--muted)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;padding:14px 24px;background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .2s;line-height:1.4}
+.faq-q:hover{background:rgba(255,255,255,0.03)}
+.faq-chevron{font-size:11px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-a{display:none;padding:0 24px 14px;font-size:13px;color:var(--muted);line-height:1.7}
+.faq-a a{color:var(--accent);text-decoration:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.related-tools{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+.related-title{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.related-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px;text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s;display:flex;align-items:center;gap:10px}
+.related-card:hover{border-color:var(--border-bright);transform:translateY(-1px)}
+.related-card-icon{font-size:18px;flex-shrink:0}
+.related-card-name{font-size:12px;font-weight:500;color:var(--text)}
+.related-card-desc{font-size:11px;color:var(--muted);margin-top:1px}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:44px 24px 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;max-width:860px;margin:0 auto 32px}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.footer-grid{grid-template-columns:1fr}}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:var(--text);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:9px;transition:color .2s}
+.footer-col a:hover{color:var(--accent2)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+
+/* CARRY-OVER BANNER */
+.carryover-banner{display:none;align-items:center;gap:12px;padding:14px 18px;background:rgba(94,231,183,0.07);border:1px solid rgba(94,231,183,0.25);border-radius:var(--radius)}
+.carryover-banner.visible{display:flex}
+.carryover-icon{font-size:20px;flex-shrink:0}
+.carryover-text{flex:1}
+.carryover-title{font-size:14px;font-weight:600;color:var(--accent2);margin-bottom:2px}
+.carryover-sub{font-size:12px;color:var(--muted)}
+.carryover-dismiss{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px;line-height:1;flex-shrink:0}
+.carryover-dismiss:hover{color:var(--text)}
+/* CONTINUE TOOLS */
+.continue-tools{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:none}
+.continue-tools.visible{display:block}
+.continue-tools-header{padding:16px 20px;border-bottom:1px solid var(--border);background:var(--surface2)}
+.continue-tools-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.continue-tools-sub{font-size:12px;color:var(--muted)}
+.continue-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;padding:16px}
+.continue-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s,background .2s;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;cursor:pointer}
+.continue-card:hover{border-color:var(--accent);background:rgba(124,110,240,0.05);transform:translateY(-1px)}
+.continue-card-icon{font-size:24px}
+.continue-card-name{font-size:13px;font-weight:600;color:var(--text)}
+.continue-card-desc{font-size:11px;color:var(--muted);line-height:1.4}
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eraseai.pages.dev/"},{"@type":"ListItem","position":2,"name":"Image Cropper","item":"https://eraseai.pages.dev/image-cropper.html"}]}</script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-logo"><div class="site-nav-logo-icon">✂️</div><span class="site-nav-logo-text">EraseAI</span></a>
+  <div class="site-nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html" class="nav-cta">🧰 All Tools</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+<div class="ad-bar"><div class="ad-bar-label">Advertisement</div><div class="ad-ph">📢 Google AdSense — 728×90 Leaderboard</div></div>
+<header>
+  <div class="page-tag">✂️ Image Cropper</div>
+  <h1>Free Image Cropper Online</h1>
+  <p class="subtitle">Crop images for Instagram, YouTube thumbnails, Amazon product photos — free, instant, no signup. $0 forever, no watermark.</p>
+</header>
+<main>
+  <!-- CARRY-OVER BANNER -->
+  <div class="carryover-banner" id="carryover-banner">
+    <div class="carryover-icon">✨</div>
+    <div class="carryover-text">
+      <div class="carryover-title">Your image is ready — no re-upload needed</div>
+      <div class="carryover-sub" id="carryover-sub">Carried over from your last tool</div>
+    </div>
+    <button class="carryover-dismiss" onclick="dismissCarryover()" title="Dismiss">×</button>
+  </div>
+  <div class="drop-zone" id="drop-zone">
+    <input type="file" id="file-input" accept="image/*">
+    <div class="drop-icon">✂️</div>
+    <p class="drop-title">Drop your image here</p>
+    <p class="drop-sub">or <span>browse to upload</span> — JPG, PNG, WEBP, GIF</p>
+  </div>
+  <div class="card" id="cropper-card" style="display:none;">
+    <div class="ratio-bar">
+      <span class="ratio-label">Aspect Ratio:</span>
+      <button class="ratio-btn active" onclick="setRatio(NaN,this)">Free</button>
+      <button class="ratio-btn" onclick="setRatio(1,this)">1:1 📷</button>
+      <button class="ratio-btn" onclick="setRatio(16/9,this)">16:9 🎬</button>
+      <button class="ratio-btn" onclick="setRatio(4/3,this)">4:3</button>
+      <button class="ratio-btn" onclick="setRatio(4/5,this)">4:5 📱</button>
+      <button class="ratio-btn" onclick="setRatio(9/16,this)">9:16 📲</button>
+      <button class="ratio-btn" onclick="setRatio(3/2,this)">3:2</button>
+      <button class="ratio-btn" onclick="setRatio(2/1,this)">2:1</button>
+    </div>
+    <div class="cropper-wrap"><img id="crop-image" src="" alt="Crop"></div>
+    <div class="info-bar">
+      <span>Crop area: <strong id="crop-info">—</strong></span>
+      <span style="color:var(--muted);font-size:12px;">Adjust crop box then click Apply Crop ↓</span>
+    </div>
+    <div class="action-row">
+      <button class="btn btn-primary" id="btn-crop" onclick="doCrop()">✂️ Apply Crop</button>
+      <button class="btn btn-secondary" onclick="resetTool()">🔄 New Image</button>
+    </div>
+  </div>
+  <!-- RESULT -->
+  <div class="card" id="result-card" style="display:none;">
+    <div style="padding:14px 18px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+      <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">✅</span><div><div style="font-size:14px;font-weight:600;color:var(--text);">Crop applied successfully</div><div style="font-size:12px;color:var(--muted);">New dimensions: <strong id="result-dims" style="color:var(--accent2);">—</strong></div></div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <select id="result-format" style="background:var(--surface);border:1px solid var(--border-bright);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;padding:7px 10px;outline:none;cursor:pointer;" onchange="reExport()"><option value="image/jpeg|jpg" selected>JPG</option><option value="image/png|png">PNG</option><option value="image/webp|webp">WEBP</option></select>
+        <button class="btn btn-success" id="btn-download" onclick="downloadResult()" style="flex:none;padding:8px 20px;font-size:13px;">⬇️ Download</button>
+        <button class="btn btn-secondary" onclick="goBackCrop()" style="flex:none;padding:8px 14px;font-size:13px;">✏️ Re-crop</button>
+      </div>
+    </div>
+    <div style="padding:18px;background:#0d0e12;display:flex;align-items:center;justify-content:center;min-height:200px;"><img id="result-img" src="" alt="Cropped result" style="max-width:100%;max-height:460px;border-radius:8px;border:1px solid var(--border);display:block;"></div>
+    <div style="padding:11px 18px;border-top:1px solid var(--border);display:flex;gap:20px;font-size:13px;color:var(--muted);flex-wrap:wrap;">
+      <span>Size: <strong id="result-size" style="color:var(--text);">—</strong></span>
+      <span>Dimensions: <strong id="result-dims2" style="color:var(--text);">—</strong></span>
+      <span>Format: <strong id="result-fmt-label" style="color:var(--text);">JPG</strong></span>
+    </div>
+  </div>
+
+  <!-- CROP GUIDE -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px">
+    <div style="font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px">Platform image sizes — quick reference</div>
+    <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px"><strong style="color:var(--text)">Instagram</strong> — Square feed posts are 1:1 (1080×1080px). Portrait posts at 4:5 (1080×1350px) take up more feed space. Stories and Reels are full screen at 9:16 (1080×1920px). Carousel posts can use either 1:1 or 4:5.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px"><strong style="color:var(--text)">YouTube</strong> — Thumbnails are 16:9 at 1280×720px minimum. The thumbnail is often what determines whether someone clicks, so crop to keep the key visual element centered and legible at small sizes.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px"><strong style="color:var(--text)">Amazon</strong> — Main product images must be square (1:1) with the product filling at least 85% of the frame. Secondary images can use a wider ratio. Minimum 1000px on the longest side, 1500px or larger to enable zoom.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.8"><strong style="color:var(--text)">LinkedIn</strong> — Profile photos display as circles cropped from a square, so 1:1 is correct. Banner images use 3:1 (1584×396px recommended). Shared post images display best at 1.91:1.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="faq-section-header">
+      <div class="faq-section-title">Frequently Asked Questions — Image Cropper</div>
+      <div class="faq-section-sub">Free image cropping for Instagram, YouTube, Amazon, LinkedIn & more</div>
+    </div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What aspect ratio should I use for Instagram posts? <span class="faq-chevron">▼</span></button><div class="faq-a">Square posts (1:1) are the classic Instagram format. Portrait posts at 4:5 take up more vertical screen space in the feed, which tends to get more visibility and engagement. For Stories and Reels, go with 9:16 — that's full screen vertical. All three are preset buttons; click one and the crop box updates immediately.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the correct crop ratio for YouTube thumbnails? <span class="faq-chevron">▼</span></button><div class="faq-a">YouTube thumbnails are 16:9. Pick that preset, drag the crop box to frame your content — make sure the key visual element is centered and clear at small sizes since thumbnails display quite small in search results. After cropping, check the file size; YouTube has a 2MB limit so you may need to run it through the <a href="image-compressor.html">Image Compressor</a>.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I crop product images for Amazon listings? <span class="faq-chevron">▼</span></button><div class="faq-a">Amazon requires main product images to be square (1:1 ratio) on a pure white background, at least 1000px on the longest side. Use the 1:1 crop preset to make your product image square, then use the <a href="bg-color-changer.html">Background Color Changer</a> to add a white background — all free at $0.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the best crop size for LinkedIn profile photos? <span class="faq-chevron">▼</span></button><div class="faq-a">Profile photos on LinkedIn are displayed as circles, cropped from a square — so use the 1:1 preset and make sure the face is centered. For banner/cover images, LinkedIn uses a 3:1 ratio. If you're optimizing a headshot, the <a href="image-enhancer.html">Photo Enhancer</a> can sharpen the details before you crop.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I crop a PNG and keep the transparency? <span class="faq-chevron">▼</span></button><div class="faq-a">Yes — choose PNG in the format dropdown before downloading and the transparency carries through to the cropped result. If you pick JPG instead, transparent areas get filled with white. This matters most when you're cropping a background-removed PNG and want to keep the transparent edges clean.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the image cropper really free with no watermark? <span class="faq-chevron">▼</span></button><div class="faq-a">Free, no watermarks, no account. It runs in your browser and your images never leave your device. That's the whole deal.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I re-crop after applying a crop? <span class="faq-chevron">▼</span></button><div class="faq-a">Yes. The Re-crop button takes you back to the cropping interface with the original image — not the cropped version — so you can adjust the selection. You can also change the output format and re-export from the result view without going back to crop again.</div></div>
+  </div>
+  <!-- RELATED -->
+  <div class="related-tools">
+    <div class="related-title">Related Free Tools</div>
+    <div class="related-grid">
+      <a href="image-resizer.html" class="related-card"><div class="related-card-icon">📐</div><div><div class="related-card-name">Image Resizer</div><div class="related-card-desc">Resize to exact dimensions</div></div></a>
+      <a href="image-compressor.html" class="related-card"><div class="related-card-icon">🗜️</div><div><div class="related-card-name">Image Compressor</div><div class="related-card-desc">Reduce file size after cropping</div></div></a>
+      <a href="bg-remover.html" class="related-card"><div class="related-card-icon">✂️</div><div><div class="related-card-name">BG Remover</div><div class="related-card-desc">Remove image background</div></div></a>
+      <a href="bg-color-changer.html" class="related-card"><div class="related-card-icon">🎨</div><div><div class="related-card-name">BG Color Changer</div><div class="related-card-desc">Add white Amazon background</div></div></a>
+    </div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+<script>
+
+// ── CROSS-TOOL IMAGE SHARING ──────────────────────────────────
+const STORAGE_KEY = 'eraseai_shared_image';
+const STORAGE_SOURCE = 'eraseai_shared_source';
+const TOOL_NAMES = {
+  'bg-remover':'Background Remover','bg-color-changer':'BG Color Changer',
+  'image-resizer':'Image Resizer','image-compressor':'Image Compressor',
+  'image-converter':'Image Converter','image-cropper':'Image Cropper','image-enhancer':'Photo Enhancer'
+};
+function saveImageToSession(blob, sourceTool){
+  try{const r=new FileReader();r.onload=()=>{localStorage.setItem(STORAGE_KEY,r.result);localStorage.setItem(STORAGE_SOURCE,sourceTool);};r.readAsDataURL(blob);}catch(e){}
+}
+function continueWith(toolPage, sourceTool){
+  if(window._currentResultBlob) saveImageToSession(window._currentResultBlob, sourceTool);
+  window.location.href = toolPage;
+}
+function dismissCarryover(){document.getElementById('carryover-banner').classList.remove('visible');}
+function checkCarryover(loadFn){
+  window.addEventListener('load',()=>{
+    try{
+      const stored=localStorage.getItem(STORAGE_KEY);
+      const source=localStorage.getItem(STORAGE_SOURCE);
+      if(stored&&source){
+        fetch(stored).then(r=>r.blob()).then(blob=>{
+          const file=new File([blob],'carried-image.png',{type:blob.type});
+          loadFn(file);
+          const banner=document.getElementById('carryover-banner');
+          document.getElementById('carryover-sub').textContent=TOOL_NAMES[source]?`Carried over from ${TOOL_NAMES[source]}`:'Carried over from your last tool';
+          banner.classList.add('visible');
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem(STORAGE_SOURCE);
+        }).catch(()=>{});
+      }
+    }catch(e){}
+  });
+}
+
+let cropper=null,resultBlob=null;
+const dropZone=document.getElementById('drop-zone'),fileInput=document.getElementById('file-input'),cropImgEl=document.getElementById('crop-image');
+dropZone.addEventListener('dragover',e=>{e.preventDefault();dropZone.classList.add('drag-over');});
+dropZone.addEventListener('dragleave',()=>dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop',e=>{e.preventDefault();dropZone.classList.remove('drag-over');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+fileInput.addEventListener('change',()=>{if(fileInput.files[0])handleFile(fileInput.files[0]);});
+function handleFile(file){if(!file.type.startsWith('image/'))return;if(cropper){cropper.destroy();cropper=null;}const objectUrl=URL.createObjectURL(file);cropImgEl.onload=function(){document.getElementById('cropper-card').style.display='';dropZone.style.display='none';cropper=new Cropper(cropImgEl,{viewMode:1,dragMode:'move',autoCropArea:0.8,restore:false,guides:true,center:true,highlight:false,cropBoxMovable:true,cropBoxResizable:true,toggleDragModeOnDblclick:false,ready(){document.getElementById('crop-info').textContent=`${cropImgEl.naturalWidth}×${cropImgEl.naturalHeight}px`;},crop(event){const d=event.detail;document.getElementById('crop-info').textContent=`${Math.round(d.width)}×${Math.round(d.height)}px`;}});};cropImgEl.src=objectUrl;}
+function setRatio(ratio,btn){if(!cropper)return;document.querySelectorAll('.ratio-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');cropper.setAspectRatio(ratio);}
+function doCrop(){if(!cropper)return;const[mime,ext]=document.getElementById('result-format').value.split('|'),croppedCanvas=cropper.getCroppedCanvas({imageSmoothingEnabled:true,imageSmoothingQuality:'high'}),w=croppedCanvas.width,h=croppedCanvas.height;croppedCanvas.toBlob(blob=>{resultBlob=blob;const url=URL.createObjectURL(blob);document.getElementById('result-img').src=url;document.getElementById('result-dims').textContent=`${w} × ${h} px`;document.getElementById('result-dims2').textContent=`${w} × ${h} px`;document.getElementById('result-size').textContent=formatSize(blob.size);document.getElementById('result-fmt-label').textContent=ext.toUpperCase();document.getElementById('result-card').style.display='';document.getElementById('result-card').scrollIntoView({behavior:'smooth',block:'start'});
+  window._currentResultBlob=resultBlob;
+  document.getElementById('continue-tools').classList.add('visible');},mime,0.92);}
+function reExport(){if(!cropper)return;doCrop();}
+function goBackCrop(){document.getElementById('result-card').style.display='none';
+  document.getElementById('continue-tools').classList.remove('visible');
+  document.getElementById('carryover-banner').classList.remove('visible');document.getElementById('cropper-card').scrollIntoView({behavior:'smooth',block:'start'});}
+function downloadResult(){if(!resultBlob)return;const ext=document.getElementById('result-format').value.split('|')[1],a=document.createElement('a');a.href=URL.createObjectURL(resultBlob);a.download=`eraseai-cropped.${ext}`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000);}
+function resetTool(){if(cropper){cropper.destroy();cropper=null;}resultBlob=null;fileInput.value='';dropZone.style.display='';document.getElementById('cropper-card').style.display='none';document.getElementById('result-card').style.display='none';document.getElementById('crop-info').textContent='—';document.querySelectorAll('.ratio-btn').forEach((b,i)=>b.classList.toggle('active',i===0));}
+function formatSize(b){if(b<1024)return b+'B';if(b<1048576)return(b/1024).toFixed(1)+'KB';return(b/1048576).toFixed(1)+'MB';}
+function toggleNav(){const n=document.getElementById('navLinks'),h=document.getElementById('hamburger');n.classList.toggle('open');h.classList.toggle('open');}
+checkCarryover(handleFile);
+function toggleFaq(btn){const item=btn.parentElement,wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
+</script>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-col-title">Tools</div>
+      <a href="bg-remover.html">Background Remover</a>
+      <a href="image-enhancer.html">Photo Enhancer</a>
+      <a href="image-resizer.html">Image Resizer</a>
+      <a href="image-compressor.html">Image Compressor</a>
+      <a href="image-converter.html">Image Converter</a>
+      <a href="image-cropper.html">Image Cropper</a>
+      <a href="bg-color-changer.html">BG Color Changer</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Resources</div>
+      <a href="amazon-product-photos.html">Amazon Product Photos</a>
+      <a href="remove-bg-alternative.html">Free remove.bg Alternative</a>
+      <a href="photoshop-alternative.html">Free Photoshop Alternative</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 EraseAI — Free AI Image Tools. All image processing happens locally in your browser. We never store your images.</p>
+  </div>
+</footer>
+</body>
+</html>
